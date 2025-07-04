@@ -1,0 +1,210 @@
+/* Import a modern sans-serif font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg: #000;
+  --text: #eee;
+  --accent: #1abc9c;       /* teal accent */
+  --grey: #222;
+  --low-bg: rgba(26, 188, 156, 0.1);
+  --high-bg: rgba(231, 76, 60, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Centered top panel */
+.top-panel {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.uploader {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#file-input {
+  padding: 0.5rem;
+  background: var(--grey);
+  border: none;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  color: var(--bg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 6px solid var(--grey);
+  border-top: 6px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.processing-text {
+  margin-top: 0.5rem;
+  color: var(--accent);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error message */
+.error {
+  margin: 1rem auto;
+  padding: 0.75rem 1rem;
+  background: #c0392b;
+  color: #fff;
+  border-radius: 4px;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Results */
+.results {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Clause cards */
+.card {
+  background: var(--grey);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.card.low {
+  background: var(--low-bg);
+}
+
+.card.high {
+  background: var(--high-bg);
+}
+
+/* Card header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text);
+  background: #444;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Summary */
+.summary {
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+/* Clause text */
+.text {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* Analysis */
+.analysis summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.analysis pre {
+  white-space: pre-wrap;
+  background: #111;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: var(--text);
+}
+.title {
+  font-family: 'Kanit', sans-serif;
+  font-size: 6rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.analyze-button {
+  background-color: #1abc9c;        /* Teal base color */
+  color: white;
+  border: 2px solid transparent;    /* So border transition looks smooth */
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;                  /* Pointer on hover */
+  transition: 
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.analyze-button:hover {
+  background-color: #11846d;        /* Darker teal */
+  border-color: white;              /* Thin white border on hover */
+}

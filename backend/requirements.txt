@@ -1,0 +1,14 @@
+flask
+flask-cors
+celery
+redis
+pytesseract
+pdfplumber
+python-docx
+docx2txt
+spacy
+transformers
+openai
+requests
+transformers
+torch

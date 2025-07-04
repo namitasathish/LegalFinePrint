@@ -1,0 +1,21 @@
+powershell:
+wsl
+(see:namita@DESKTOP:/mnt/c/Users/Namita$)
+cd /mnt/c/college/LegalFinePrint/backend
+redis-server
+
+
+cd LegalFinePrint
+cd backend
+venv\Scripts\activate
+celery -A tasks worker --loglevel=info -P solo
+
+cd LegalFinePrint
+cd backend
+venv\Scripts\activate
+python app.py
+
+cd LegalFinePrint
+cd frontend
+npm install
+npm start
